@@ -1,4 +1,5 @@
 package ru.job4j.checkstyle;
+
 @SuppressWarnings("checkstyle:ConstantName")
 
 public class Broken {
