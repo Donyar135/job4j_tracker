@@ -1,11 +1,10 @@
 package ru.job4j.checkstyle;
 
-@SuppressWarnings("checkstyle:ConstantName")
-
 public class Broken {
-    public String surname;
-    private int sizeOfEmpty = 10;
+
     public static final String NEW_VALUE = "";
+    private int sizeOfEmpty = 10;
+    public String surname;
     String name;
 
     void method(int a, int b, int c, int d, int e, int f, int g) {
@@ -18,7 +17,6 @@ public class Broken {
     }
 
     void echo() {
-
     }
 
     Broken() {
