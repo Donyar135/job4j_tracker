@@ -6,9 +6,6 @@ public class Error {
     private String message;
 
     public Error() {
-        active = false;
-        status = 93;
-        message = "Выполнено";
     }
 
     public Error(boolean active, int status, String message) {
