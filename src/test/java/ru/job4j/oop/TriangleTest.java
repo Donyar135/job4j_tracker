@@ -17,13 +17,13 @@ public class TriangleTest {
     }
 
     @Test
-    public void when00and00and00Then0() {
-        Point a = new Point(0, 0);
-        Point b = new Point(0, 0);
-        Point c = new Point(0, 0);
+    public void when89and23and12Thenminus1() {
+        Point a = new Point(8, 9);
+        Point b = new Point(2, 3);
+        Point c = new Point(1, 2);
         Triangle triangle = new Triangle(a, b, c);
         double rsl = triangle.area();
-        double expected = 0;
-        assertThat(rsl).isCloseTo(expected, offset(0.001));
+        double expected = -1;
+        assertThat(rsl).isEqualTo(expected);
     }
 }
