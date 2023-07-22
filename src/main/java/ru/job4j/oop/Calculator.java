@@ -5,8 +5,7 @@ public class Calculator {
     private static int x = 5;
 
     public static int sum(int y) {
-        return x + y;
-    }
+        return x + y; }
 
     public static int minus(int b) {
         return b - x;
@@ -21,20 +20,20 @@ public class Calculator {
     }
 
     public int sumAllOperations(int d) {
-        return sum(10) + minus(7) + multiply(5) + divide(4);
+        return sum(d) + minus(d) + multiply(d) + divide(d);
     }
 
     public static void main(String[] args) {
-        int result = sum(10);
+        int result = sum(5);
         System.out.println(result);
-        int result1 = minus(7);
+        int result1 = minus(5);
         System.out.println(result1);
         Calculator calculator = new Calculator();
         int rsl = calculator.multiply(5);
         System.out.println(rsl);
-        int rls1 = calculator.divide(4);
+        int rls1 = calculator.divide(5);
         System.out.println(rls1);
-        int rls2 = calculator.sumAllOperations(0);
+        int rls2 = calculator.sumAllOperations(5);
         System.out.println("sum all operations: " + rls2);
     }
 }
