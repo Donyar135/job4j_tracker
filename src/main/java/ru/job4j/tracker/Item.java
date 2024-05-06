@@ -36,13 +36,8 @@ public class Item {
         this.name = name;
     }
 
-    public LocalDateTime getCreated() {
-        return created;
-    }
-
-    public DateTimeFormatter getFormatter()  {
+    public String getCreated() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
-        return formatter;
+        return created.format(formatter);
     }
-
 }
