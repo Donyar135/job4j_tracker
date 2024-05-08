@@ -31,15 +31,26 @@ public class Tracker {
         return Arrays.copyOf(result, newSize);
     }
 
-    public Item findById(int id) {
-        Item result = null;
+    private int indexOf(int id) {
+        int result = -1;
         for (int index = 0; index < size; index++) {
-            Item item = items[index];
-            if (item.getId() == id) {
-                result = item;
+            if (items[index].getId() == id) {
+                result = index;
                 break;
             }
         }
         return result;
+    }
+
+    public Item findById(int id) {
+        return indexOf(id) != -1 ? items[indexOf(id)] : null;
+    }
+
+    public boolean replace(int id, Item item) {
+        if (indexOf(id) != -1) {
+            items[indexOf(id)] = item;
+            return true;
+        }
+        return false;
     }
 }
