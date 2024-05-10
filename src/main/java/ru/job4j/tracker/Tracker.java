@@ -43,14 +43,9 @@ public class Tracker {
     }
 
     public Item findById(int id) {
-        return indexOf(id) != -1 ? items[indexOf(id)] : null;
-    }
-
-    public boolean replace(int id, Item item) {
-        if (indexOf(id) != -1) {
-            items[indexOf(id)] = item;
-            return true;
-        }
-        return false;
+        /* Находим индекс */
+        int index = indexOf(id);
+        /* Если индекс найден возвращаем item, иначе null */
+        return index != -1 ? items[index] : null;
     }
 }
