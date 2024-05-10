@@ -48,4 +48,14 @@ public class Tracker {
         /* Если индекс найден возвращаем item, иначе null */
         return index != -1 ? items[index] : null;
     }
+
+    public boolean replace(int id, Item item) {
+        int index = indexOf(id);
+        if (index != -1) {
+            item.setId(id);
+            items[index] = item;
+            return true;
+        }
+        return false;
+    }
 }
