@@ -13,10 +13,16 @@ public class Matches {
             System.out.println(player + " введите число от 1 до 3:");
             int matches = Integer.parseInt(input.nextLine());
             turn = !turn;
-            if (matches <= 3 && matches >= 0) {
+            if (matches <= 3 && matches >= 1) {
                 count = count - matches;
+                System.out.println("Осталось на столе " + count);
+            } else if (matches < 1) {
+                System.out.println("Обьязательно надо брать минимум 1 спичек. Правила игры нарушен");
+                turn = !turn;
+                break;
             } else {
-                System.out.println("Нельзя брать больше" + matches + "Правила игры нарушен");
+                System.out.println("Нельзя брать больше 3 спичек. Правила игры нарушен");
+                turn = !turn;
                 break;
             }
         }
