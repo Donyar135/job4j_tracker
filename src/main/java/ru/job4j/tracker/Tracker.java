@@ -60,11 +60,11 @@ public class Tracker {
     }
 
     public void delete(int id) {
-        int start = indexOf(id) + 1;
-        int distPos = indexOf(id);
-        int length = size - indexOf(id) - 1;
-        boolean result = findById(id) != null;
+        boolean result = indexOf(id) != -1;
         if (result) {
+            int start = indexOf(id) + 1;
+            int distPos = indexOf(id);
+            int length = size - indexOf(id) - 1;
             System.arraycopy(items, start, items, distPos, length);
             items[size - 1] = null;
             size--;
