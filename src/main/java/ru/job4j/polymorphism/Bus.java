@@ -4,16 +4,16 @@ public class Bus implements Transport {
 
     @Override
     public void drive() {
-
+        System.out.println("вперед");
     }
 
     @Override
     public int passengers(int i) {
-        return 0;
+        return i;
     }
 
     @Override
     public int lock(int f) {
-        return 0;
+        return f * 95;
     }
 }
