@@ -8,8 +8,7 @@ public class Bus implements Transport {
     }
 
     @Override
-    public int passengers(int i) {
-        return i;
+    public void passengers(int i) {
     }
 
     @Override

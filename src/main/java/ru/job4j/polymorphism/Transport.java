@@ -4,7 +4,7 @@ public interface Transport {
 
     void drive();
 
-    int passengers(int i);
+    void passengers(int i);
 
     int lock(int f);
 }
