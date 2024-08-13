@@ -59,7 +59,7 @@ public class Tracker {
         return result;
     }
 
-    public Item delete(int id) {
+    public void delete(int id) {
         int index = indexOf(id);
         boolean result = index != -1;
         if (result) {
@@ -68,6 +68,5 @@ public class Tracker {
             size--;
         }
 
-        return null;
     }
 }
