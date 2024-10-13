@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class StartUITest {
+
     @Test
     void whenCreateItem() {
         Output output = new ConsoleOutput();
@@ -42,9 +43,7 @@ class StartUITest {
         Output output = new ConsoleOutput();
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Deleted item"));
-        Input input = new MockInput(
-                new String[] {"0" ,String.valueOf(item.getId()), "1"}
-        );
+        Input input = new MockInput(new String[] {"0", String.valueOf(item.getId()), "1"});
         UserAction[] actions = {
                 new DeleteAction(output),
                 new ExitAction(output)
