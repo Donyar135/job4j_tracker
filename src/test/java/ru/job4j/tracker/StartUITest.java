@@ -98,6 +98,7 @@ class StartUITest {
                         + "0. Показать все заявки" + ln
                         + "1. Завершить программу" + ln
                         + "=== Вывод всех заявок ===" + ln
+                        + one + ln
                         + "Меню:" + ln
                         + "0. Показать все заявки" + ln
                         + "1. Завершить программу" + ln
@@ -111,7 +112,7 @@ class StartUITest {
         Tracker tracker = new Tracker();
         Item one = tracker.add(new Item("test1"));
         Input input = new MockInput(
-                new String[] {"0", String.valueOf(one.getName()), "1"}
+                new String[] {"0", one.getName(), "1"}
         );
         UserAction[] actions = new UserAction[]{
                 new FindByNameAction(output),
@@ -124,7 +125,7 @@ class StartUITest {
                         + "0. Показать заявки по имени" + ln
                         + "1. Завершить программу" + ln
                         + "=== Вывод заявок по имени ===" + ln
-                        + one.toString() + ln
+                        + one + ln
                         + "Меню:" + ln
                         + "0. Показать заявки по имени" + ln
                         + "1. Завершить программу" + ln
@@ -151,7 +152,7 @@ class StartUITest {
                         + "0. Показать заявку по id" + ln
                         + "1. Завершить программу" + ln
                         + "=== Вывод заявки по id ===" + ln
-                        + one.toString() + ln
+                        + one + ln
                         + "Меню:" + ln
                         + "0. Показать заявку по id" + ln
                         + "1. Завершить программу" + ln
