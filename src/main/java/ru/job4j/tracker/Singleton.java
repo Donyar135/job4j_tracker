@@ -2,12 +2,12 @@ package ru.job4j.tracker;
 
 public final class Singleton {
 
-    private static Singleton instance = null;
+    private static Singleton instance = null; // ссылка на единственный объект класса Singleton
 
-    private Singleton() {
+    private Singleton() { //явно создаем закрытый конструктор.
     }
 
-    public static Singleton getInstance() {
+    public static Singleton getInstance() {  //статический метод. Он используется для публикации ссылки.
         if (instance == null) {
             instance = new Singleton();
         }
