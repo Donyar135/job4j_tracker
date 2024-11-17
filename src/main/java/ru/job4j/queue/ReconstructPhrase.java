@@ -17,28 +17,15 @@ public class ReconstructPhrase {
 
     private String getEvenElements() {
         StringBuilder builder = new StringBuilder();
-        int index = 0;
-        for (Character text : evenElements) {
+        List<Character> elementsList = new ArrayList<>(evenElements);
+
+        for (int index = 0; index < elementsList.size(); index++) {
             if (index % 2 == 0) {
-                builder.append(text);
+                builder.append(elementsList.get(index));
             }
-            index++;
         }
         return builder.toString();
     }
-    /*
-    private String getEvenElements() {
-            StringBuilder builder = new StringBuilder();
-            List<Character> elementsList = new ArrayList<>(evenElements);
-
-            for (int index = 0; index < elementsList.size(); index++) {
-                if (index % 2 == 0) {
-                    builder.append(elementsList.get(index));
-                }
-            }
-
-            return builder.toString();
-            */
 
     private String getDescendingElements() {
         StringBuilder builder = new StringBuilder();
@@ -48,14 +35,6 @@ public class ReconstructPhrase {
         }
         return builder.toString();
     }
-    /*
-    private String getDescendingElements() {
-        StringBuilder builder = new StringBuilder();
-        for (int i = descendingElements.size() - 1; i >= 0; i--) {
-            builder.append(descendingElements.pollLast());
-        }
-        return builder.toString();
-        */
 
     public String getReconstructPhrase() {
         return getEvenElements() + getDescendingElements();
