@@ -2,6 +2,7 @@ package ru.job4j.queue;
 
 import java.util.ArrayList;
 import java.util.Deque;
+import java.util.Iterator;
 import java.util.List;
 
 public class ReconstructPhrase {
@@ -17,21 +18,18 @@ public class ReconstructPhrase {
 
     private String getEvenElements() {
         StringBuilder builder = new StringBuilder();
-        List<Character> elementsList = new ArrayList<>(evenElements);
-
-        for (int index = 0; index < elementsList.size(); index++) {
-            if (index % 2 == 0) {
-                builder.append(elementsList.get(index));
-            }
+        Iterator<Character> iterator = evenElements.iterator();
+        while (iterator.hasNext()) {
+            builder.append(iterator.next());
+            iterator.next();
         }
         return builder.toString();
     }
 
     private String getDescendingElements() {
         StringBuilder builder = new StringBuilder();
-        List<Character> elementsList = new ArrayList<>(descendingElements);
-        for (int i = elementsList.size() - 1; i >= 0; i--) {
-            builder.append(elementsList.get(i));
+        for (int i = descendingElements.size() - 1; i >= 0; i--) {
+            builder.append(descendingElements.pollLast());
         }
         return builder.toString();
     }
