@@ -51,7 +51,6 @@ public class BankService {
                                  String destinationPassport, String destinationRequisite,
                                  double amount) {
         Account sourceAccount = findByRequisite(sourcePassport, sourceRequisite);
-
         Account destinationAccount = findByRequisite(destinationPassport, destinationRequisite);
 
         if (sourceAccount != null && destinationAccount != null && sourceAccount.getBalance() >= amount) {
