@@ -18,10 +18,11 @@ public class ReconstructPhrase {
 
     private String getEvenElements() {
         StringBuilder builder = new StringBuilder();
-        Iterator<Character> iterator = evenElements.iterator();
-        while (iterator.hasNext()) {
-            builder.append(iterator.next());
-            iterator.next();
+        while (!evenElements.isEmpty()) {
+            builder.append(evenElements.pollFirst());
+            if (!evenElements.isEmpty()) {
+                evenElements.pollFirst();
+            }
         }
         return builder.toString();
     }
