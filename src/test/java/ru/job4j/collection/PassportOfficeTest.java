@@ -15,8 +15,8 @@ public class PassportOfficeTest {
     @Test
     public void whenDuplicateNewKey() {
         Citizen citizen = new Citizen("2f44a", "Petr Arsentev");
-                          new Citizen("2f44a", "Petr Arsentev Sergeevich");
         PassportOffice office = new PassportOffice();
-        assertThat(office.add(citizen)).isFalse();
+        office.add(citizen);
+        assertThat(office.add(new Citizen("2f44a", "Petr Arsentev Sergeevich"))).isFalse();
     }
 }
