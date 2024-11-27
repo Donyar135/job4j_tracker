@@ -17,6 +17,7 @@ import java.util.Map;
  * Ссылка а документацию:
  * <a href="http://localhost:63342/job4j_tracker/tracker/target/site/apidocs/ru/job4j/bank/BankService.html?_ijt=bgtkbnpb31t7adtvkomagtvo4d&_ij_reload=RELOAD_ON_SAVE">...</a>
  */
+
 public class BankService {
     /**
      * Хранение задания осуществляется в коллекции типа Map
