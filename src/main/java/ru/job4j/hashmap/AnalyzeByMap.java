@@ -38,8 +38,9 @@ public class AnalyzeByMap {
             for (Subject subject : pupil.getSubjects()) {
                 String subjectName = subject.getName();
                 int score = subject.getScore();
-                subjectScores.put(subjectName, subjectScores.getOrDefault(subjectName, 0) + score);
-                subjectCounts.put(subjectName, subjectCounts.getOrDefault(subjectName, 0) + 1);
+
+                subjectScores.merge(subjectName, score, (oldValue, newValue) -> oldValue + score);
+                subjectCounts.merge(subjectName, 1, (oldValue, newValue) -> oldValue + 1);
             }
         }
         List<Label> labels = new ArrayList<>();
@@ -74,7 +75,7 @@ public class AnalyzeByMap {
             for (Subject subject : pupil.getSubjects()) {
                 String subjectName = subject.getName();
                 int score = subject.getScore();
-                subjectScores.put(subjectName, subjectScores.getOrDefault(subjectName, 0) + score);
+                subjectScores.merge(subjectName, score, (oldValue, newValue) -> oldValue + score);
             }
         }
 
