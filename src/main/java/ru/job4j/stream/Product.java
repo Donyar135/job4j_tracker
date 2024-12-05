@@ -53,4 +53,12 @@ public class Product {
     public int hashCode() {
         return Objects.hash(name, price, standard, actual);
     }
+
+    @Override
+    public String toString() {
+        return "Label{"
+                + "name='" + name + '\''
+                + ", price=" + price / 2
+                + '}';
+    }
 }
