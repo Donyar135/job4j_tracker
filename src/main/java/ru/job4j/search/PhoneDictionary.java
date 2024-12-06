@@ -20,7 +20,7 @@ public class PhoneDictionary {
         Predicate<Person> combine = person -> compareName.or(compareSurname).or(comparePhone).or(compareAddress).test(person);
 
         ArrayList<Person> result = new ArrayList<>();
-        for (Person person : persons) {
+        for (var person : persons) {
             if (combine.test(person)) {
                 result.add(person);
             }
